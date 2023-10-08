@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+        }
+        #main-con{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+         #temp{
+            text-align: center;
+            position: relative;
+            margin: 20px;
+            padding: 20px;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            border: 1px solid black;
+            background-color: lightgray;
+            padding: 20px 10px 20px 0px;
+            margin: 50px 100px 80px 100px;
+            width: 60%;
+            height: 500px;
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            border-radius: 1%;
+            
+           
+        }
+        
+        
+        #stat{
+           background-color: lightgray;
+           font-size: 2rem;
+        }
+        #celsius{
+            background-color: lightgray;
+            color: rgb(75, 26, 26);
+            margin: 10px;
+            font-size: 25px;
+           
+            
+            
+        }
+        #fahrenheit{
+            background-color: lightgray;
+            color: rgb(75, 26, 26);
+            margin: 10px;
+            font-size: 25px;
+            
+            
+        }
+        #cel{
+            height: 25px;
+        }
+        #fah{
+            height: 25px;
+        }
+        @media (max-width: 468px){
+           
+           #container{
+           display: flex;
+           flex-direction: column;
+           flex-wrap: wrap;
+           align-items: center;
+           border: 1px solid black;
+           background-color: lightgray;
+           padding: 20px 10px 20px 0px;
+           margin: 50px 150px 80px 150px;
+           width: 60%;
+           height: 400px;
+           position: relative;
+           text-align: center;
+           justify-content: center;
+           border-radius: 1%;
+           
+          
+       }
+       
+
+       
+       }
+       @media (max-width: 340px){
+           
+           #container{
+           display: flex;
+           flex-direction: column;
+           flex-wrap: wrap;
+           align-items: center;
+           border: 1px solid black;
+           background-color: lightgray;
+           padding: 20px 10px 20px 0px;
+           margin: 50px 10px 80px 10px;
+           width: 80%;
+           height: 400px;
+           position: relative;
+           text-align: center;
+           justify-content: center;
+           border-radius: 1%;
+           
+          
+       }
+       
+
+       
+       }
+      
+      
+       
+    </style>
+</head>
+<body>
+    <div id="main-con">
+    <h1 id="temp">Temperature Converter</h1>
+    <div id="container">
+        <p id="stat">Insert a number into one of the input fields below:</p>
+        <div id="celsius">
+            Celsius:
+            <input type="text" name="cels" id="cel" onkeyup="converter('C')">
+
+        </div><br><br>
+        <div id="fahrenheit">
+            Fahrenheit:
+            <input type="text" name="fah" id="fah" onkeyup="converter('F')">
+
+        </div>
+    </div>
+   </div> 
+    <script>
+        function converter(degree){
+            var cel;
+            if(degree=='C'){
+                cel=document.getElementById("cel").value*9/5+32;
+                document.getElementById("fah").value=Math.round(cel);
+            }
+            else{
+                cel=(document.getElementById("fah").value-32)*5/9;
+                document.getElementById("cel").value=Math.round(cel);
+            }
+        }
+    </script>
+</body>
+</html>
